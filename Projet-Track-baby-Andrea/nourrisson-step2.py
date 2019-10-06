@@ -30,6 +30,12 @@ def creation_liste(fic_loc,percent) :
 
 Poids_fic_path = '/home/bnp-renault-005/Bureau/Andrea/GITHUB/Projet-Track-baby-Andrea/constantes-nourrissons-light/poids-age-garcon-0-60-light.csv'
 
+# LAge en abscisse x :
+L_poids_G_age_cumul=[]
+
+L_poids_G_age_cumul= creation_liste(Poids_fic_path,0)
+print(f'Age garçon : {L_poids_G_age_cumul}')
+
 # Liste Poids garçon %tage de 5 % :
 L_poids_G_05_cumul=[]
 
@@ -66,4 +72,25 @@ print(f'Poids garçon 95 % : {L_poids_G_95_cumul}')
 # Affichage des graphiques à faire
 #--------------------------------------------------------------------
 
+x = L_poids_G_age_cumul
+v = L_poids_G_25_cumul
+w = L_poids_G_50_cumul
+y = L_poids_G_75_cumul
+z = L_poids_G_95_cumul
 
+
+plt.xlabel('x')
+plt.xlabel('y')
+plt.xlabel('v')
+plt.xlabel('w')
+plt.xlabel('z')
+
+plt.scatter(y,x,label='skitscat',color='R')
+plt.scatter(v,x,label='skitscat',color='B')
+plt.scatter(w,x,label='skitscat',color='G')
+plt.scatter(z,x,label='skitscat',color='Y')
+
+
+plt.title("Poids garçon en fonction de %tage")
+plt.legend()
+plt.show()
